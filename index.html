@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Comandos Python</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Fira+Code&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+        }
+        code, pre {
+            font-family: 'Fira Code', monospace;
+            background-color: #1f2937; /* bg-gray-800 */
+            color: #d1d5db; /* text-gray-300 */
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.5rem;
+        }
+        pre {
+            padding: 1rem;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+            overflow-x: auto;
+        }
+        .command-card {
+            background-color: #374151; /* bg-gray-700 */
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #4b5563; /* border-gray-600 */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .output {
+             background-color: #1e293b; /* bg-slate-800 */
+             padding: 0.75rem;
+             border-radius: 0.5rem;
+             border-left: 4px solid #34d399; /* border-green-400 */
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-4xl">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Guia Rápido de Comandos Python</h1>
+            <p class="text-lg text-gray-400">Uma referência essencial para comandos gerais e manipulação de listas.</p>
+        </header>
+
+        <!-- Seção de Comandos Gerais -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold border-b-2 border-cyan-500 pb-2 mb-8 text-white">Comandos Gerais</h2>
+
+            <!-- Card: Variáveis -->
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-cyan-400">Variáveis e Atribuição</h3>
+                <p class="mb-4">Usadas para armazenar dados na memória. Você atribui um valor a uma variável usando o sinal de igual <code>=</code>.</p>
+                <pre><code># Atribui uma string a uma variável
+nome = "Alice"
+# Atribui um inteiro
+idade = 30
+# Imprime os valores
+print(f"Nome: {nome}, Idade: {idade}")</code></pre>
+                <div class="output">
+                    <p class="font-mono text-sm text-green-400">> Nome: Alice, Idade: 30</p>
+                </div>
+            </div>
+
+            <!-- Card: print() -->
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-cyan-400"><code>print()</code></h3>
+                <p class="mb-4">Exibe dados (texto, números, variáveis) na tela (console).</p>
+                <pre><code>print("Olá, Mundo!")</code></pre>
+                <div class="output">
+                    <p class="font-mono text-sm text-green-400">> Olá, Mundo!</p>
+                </div>
+            </div>
+
+            <!-- Card: if/elif/else -->
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-cyan-400"><code>if / elif / else</code></h3>
+                <p class="mb-4">Executa blocos de código diferentes com base em condições.</p>
+                <pre><code>temperatura = 25
+if temperatura > 30:
+    print("Está muito quente!")
+elif temperatura > 20:
+    print("Clima agradável.")
+else:
+    print("Está frio.")</code></pre>
+                <div class="output">
+                    <p class="font-mono text-sm text-green-400">> Clima agradável.</p>
+                </div>
+            </div>
+
+            <!-- Card: for -->
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-cyan-400"><code>for</code></h3>
+                <p class="mb-4">Usado para iterar sobre uma sequência (como uma lista, string ou range).</p>
+                <pre><code># Itera sobre os números de 0 a 4
+for i in range(5):
+    print(f"Número: {i}")</code></pre>
+                <div class="output">
+                    <p class="font-mono text-sm text-green-400">> Número: 0<br>> Número: 1<br>> Número: 2<br>> Número: 3<br>> Número: 4</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Seção de Comandos de Lista -->
+        <section>
+            <h2 class="text-3xl font-bold border-b-2 border-teal-500 pb-2 mb-8 text-white">Comandos Específicos para Listas</h2>
+            <p class="mb-8 text-gray-400">Listas são coleções ordenadas e mutáveis de itens. Elas são uma das estruturas de dados mais versáteis do Python.</p>
+
+            <pre class="mb-8"><code># Lista de exemplo usada nos comandos abaixo
+frutas = ["maçã", "banana", "laranja"]
+print(f"Lista inicial: {frutas}")</code></pre>
+
+            <!-- Card: append() -->
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-teal-400"><code>append()</code></h3>
+                <p class="mb-4">Adiciona um item ao final da lista.</p>
+                <pre><code>frutas_exemplo = ["maçã", "banana", "laranja"]
+frutas_exemplo.append("uva")
+print(frutas_exemplo)</code></pre>
+                <div class="output">
+                    <p class="font-mono text-sm text-green-400">> ['maçã', 'banana', 'laranja', 'uva']</p>
+                </div>
+            </div>
+
+            <!-- Card: extend() -->
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-teal-400"><code>extend()</code></h3>
+                <p class="mb-4">Adiciona todos os itens de um iterável (como outra lista) ao final da lista atual.</p>
+                <pre><code>lista1 = [1, 2, 3]
+lista2 = [4, 5, 6]
+lista1.extend(lista2)
+print(lista1)</code></pre>
+                <div class="output">
+                    <p class="font-mono text-sm text-green-400">> [1, 2, 3, 4, 5, 6]</p>
+                </div>
+            </div>
+            
+            <!-- Card: insert() -->
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-teal-400"><code>insert()</code></h3>
+                <p class="mb-4">Insere um item em uma posição específica (índice).</p>
+                <pre><code>frutas_exemplo = ["maçã", "banana", "laranja"]
+# Insere "morango" na posição de índice 1
+frutas_exemplo.insert(1, "morango")
+print(frutas_exemplo)</code></pre>
+                <div class="output">
+                     <p class="font-mono text-sm text-green-400">> ['maçã', 'morango', 'banana', 'laranja']</p>
+                </div>
+            </div>
+
+            <!-- Card: remove() -->
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-teal-400"><code>remove()</code></h3>
+                <p class="mb-4">Remove a primeira ocorrência de um item com o valor especificado.</p>
+                <pre><code>frutas_exemplo = ["maçã", "banana", "laranja", "banana"]
+frutas_exemplo.remove("banana")
+print(frutas_exemplo)</code></pre>
+                <div class="output">
+                    <p class="font-mono text-sm text-green-400">> ['maçã', 'laranja', 'banana']</p>
+                </div>
+            </div>
+
+            <!-- Card: pop() -->
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-teal-400"><code>pop()</code></h3>
+                <p class="mb-4">Remove o item em uma posição específica e o retorna. Se nenhum índice for especificado, remove e retorna o último item.</p>
+                <pre><code>frutas_exemplo = ["maçã", "banana", "laranja"]
+item_removido = frutas_exemplo.pop(1)
+print(f"Item removido: {item_removido}")
+print(f"Lista atual: {frutas_exemplo}")</code></pre>
+                 <div class="output">
+                    <p class="font-mono text-sm text-green-400">> Item removido: banana<br>> Lista atual: ['maçã', 'laranja']</p>
+                </div>
+            </div>
+
+            <!-- Card: clear() -->
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-teal-400"><code>clear()</code></h3>
+                <p class="mb-4">Remove todos os itens da lista, deixando-a vazia.</p>
+                <pre><code>numeros = [1, 2, 3, 4, 5]
+numeros.clear()
+print(numeros)</code></pre>
+                <div class="output">
+                    <p class="font-mono text-sm text-green-400">> []</p>
+                </div>
+            </div>
+
+             <!-- Card: index() -->
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-teal-400"><code>index()</code></h3>
+                <p class="mb-4">Retorna o índice da primeira ocorrência do valor especificado.</p>
+                <pre><code>frutas_exemplo = ["maçã", "banana", "laranja"]
+indice = frutas_exemplo.index("banana")
+print(f"O índice de 'banana' é: {indice}")</code></pre>
+                 <div class="output">
+                    <p class="font-mono text-sm text-green-400">> O índice de 'banana' é: 1</p>
+                </div>
+            </div>
+            
+            <!-- Card: len() -->
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-teal-400"><code>len()</code></h3>
+                <p class="mb-4">Retorna o número de itens em uma lista (seu comprimento).</p>
+                <pre><code>frutas_exemplo = ["maçã", "banana", "laranja"]
+print(f"A lista tem {len(frutas_exemplo)} itens.")</code></pre>
+                 <div class="output">
+                    <p class="font-mono text-sm text-green-400">> A lista tem 3 itens.</p>
+                </div>
+            </div>
+
+            <!-- Card: sort() -->
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-teal-400"><code>sort()</code></h3>
+                <p class="mb-4">Ordena a lista em ordem alfabética ou numérica, modificando a lista original.</p>
+                <pre><code>numeros = [3, 1, 4, 1, 5, 9, 2]
+numeros.sort()
+print(f"Lista ordenada: {numeros}")</code></pre>
+                 <div class="output">
+                    <p class="font-mono text-sm text-green-400">> Lista ordenada: [1, 1, 2, 3, 4, 5, 9]</p>
+                </div>
+            </div>
+
+            <!-- Card: reverse() -->
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-teal-400"><code>reverse()</code></h3>
+                <p class="mb-4">Inverte a ordem dos elementos na lista, modificando a lista original.</p>
+                <pre><code>frutas_exemplo = ["maçã", "banana", "laranja"]
+frutas_exemplo.reverse()
+print(f"Lista invertida: {frutas_exemplo}")</code></pre>
+                 <div class="output">
+                    <p class="font-mono text-sm text-green-400">> Lista invertida: ['laranja', 'banana', 'maçã']</p>
+                </div>
+            </div>
+
+            <!-- Card: copy() -->
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-teal-400"><code>copy()</code></h3>
+                <p class="mb-4">Retorna uma cópia superficial (shallow copy) da lista. Útil para modificar a cópia sem alterar o original.</p>
+                <pre><code>original = [1, 2, 3]
+copia = original.copy()
+copia.append(4)
+print(f"Original: {original}")
+print(f"Cópia: {copia}")</code></pre>
+                <div class="output">
+                    <p class="font-mono text-sm text-green-400">> Original: [1, 2, 3]<br>> Cópia: [1, 2, 3, 4]</p>
+                </div>
+            </div>
+
+             <!-- Card: Slicing -->
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-teal-400">Fatiamento (Slicing)</h3>
+                <p class="mb-4">Acessa uma parte da lista (uma sub-lista) usando a sintaxe <code>lista[início:fim:passo]</code>.</p>
+                <pre><code>numeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+# Pega os itens do índice 2 até o 4 (o 5 não é incluído)
+fatia = numeros[2:5]
+print(f"Fatia de 2 a 5: {fatia}")
+
+# Pega os 3 primeiros itens
+primeiros = numeros[:3]
+print(f"Os 3 primeiros: {primeiros}")</code></pre>
+                 <div class="output">
+                    <p class="font-mono text-sm text-green-400">> Fatia de 2 a 5: [2, 3, 4]<br>> Os 3 primeiros: [0, 1, 2]</p>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-bold border-b-2 border-amber-500 pb-2 mb-8 mt-12 text-white">Criação de Listas e Comandos Relacionados</h3>
+
+            <!-- Card: list() -->
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>list()</code> (Construtor)</h3>
+                <p class="mb-4">Cria uma nova lista a partir de um objeto iterável (como uma string, tupla ou range).</p>
+                <pre><code>palavra = "Python"
+lista_de_letras = list(palavra)
+print(lista_de_letras)</code></pre>
+                <div class="output">
+                    <p class="font-mono text-sm text-green-400">> ['P', 'y', 't', 'h', 'o', 'n']</p>
+                </div>
+            </div>
+
+            <!-- Card: split() -->
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>split()</code> (Método de String)</h3>
+                <p class="mb-4">Divide uma string em uma lista, usando um separador. Se nenhum separador for fornecido, divide pelos espaços.</p>
+                <pre><code>frase = "Python é muito versátil"
+palavras = frase.split()
+print(palavras)
+
+dados = "maçã,banana,laranja"
+lista_frutas = dados.split(',')
+print(lista_frutas)</code></pre>
+                <div class="output">
+                    <p class="font-mono text-sm text-green-400">> ['Python', 'é', 'muito', 'versátil']<br>> ['maçã', 'banana', 'laranja']</p>
+                </div>
+            </div>
+
+            <!-- Card: join() -->
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>join()</code> (Método de String)</h3>
+                <p class="mb-4">Oposto do <code>split()</code>. Une os elementos de uma lista em uma única string, usando um separador.</p>
+                <pre><code>palavras = ['Vamos', 'aprender', 'Python']
+frase_completa = " ".join(palavras)
+print(frase_completa)</code></pre>
+                <div class="output">
+                    <p class="font-mono text-sm text-green-400">> Vamos aprender Python</p>
+                </div>
+            </div>
+
+        </section>
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold border-b-2 border-amber-500 pb-2 mb-8 text-white">Comandos, Funções e Conceitos (Explicação Detalhada)</h2>
+            <p class="mb-8 text-gray-400">Uma explicação individual para cada um dos principais comandos, funções e conceitos não abordados anteriormente, para um entendimento aprofundado.</p>
+
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>while</code></h3>
+                <p class="mb-4">O laço <code>while</code> (enquanto) executa um bloco de código repetidamente, enquanto uma determinada condição continuar sendo verdadeira. É ideal para situações onde o número de iterações não é conhecido previamente.</p>
+                <pre><code># Imprime números enquanto eles forem menores que 4
+contador = 0
+while contador < 4:
+    print(f"O contador é {contador}")
+    contador = contador + 1</code></pre>
+                <div class="output">
+                    <p class="font-mono text-sm text-green-400">> O contador é 0<br>> O contador é 1<br>> O contador é 2<br>> O contador é 3</p>
+                </div>
+            </div>
+
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>break</code></h3>
+                <p class="mb-4">A instrução <code>break</code> (interromper) é usada dentro de laços (<code>for</code> ou <code>while</code>) para parar a execução do laço imediatamente, mesmo que a condição do laço ainda seja verdadeira.</p>
+                <pre><code># Para o laço quando encontrar a letra 'n'
+for letra in "Python":
+    if letra == 'h':
+        break
+    print(letra)</code></pre>
+                <div class="output">
+                    <p class="font-mono text-sm text-green-400">> P<br>> y<br>> t</p>
+                </div>
+            </div>
+
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>continue</code></h3>
+                <p class="mb-4">A instrução <code>continue</code> (continuar) é usada dentro de laços para pular o resto do código da iteração atual e passar imediatamente para a próxima iteração do laço.</p>
+                <pre><code># Pula a impressão de números pares
+for i in range(5):
+    if i % 2 == 0:
+        continue
+    print(f"Número ímpar: {i}")</code></pre>
+                <div class="output">
+                    <p class="font-mono text-sm text-green-400">> Número ímpar: 1<br>> Número ímpar: 3</p>
+                </div>
+            </div>
+            
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>def</code></h3>
+                <p class="mb-4">A palavra-chave <code>def</code> (definir) é usada para criar uma função. Funções são blocos de código nomeados e reutilizáveis que realizam uma tarefa específica.</p>
+                <pre><code># Define uma função que cumprimenta uma pessoa
+def cumprimentar(nome):
+    print(f"Olá, {nome}!")
+
+# Chama a função
+cumprimentar("Maria")</code></pre>
+                <div class="output">
+                    <p class="font-mono text-sm text-green-400">> Olá, Maria!</p>
+                </div>
+            </div>
+
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>return</code></h3>
+                <p class="mb-4">Usada dentro de uma função (definida com <code>def</code>), a instrução <code>return</code> (retornar) finaliza a execução da função e envia um valor de volta para quem a chamou.</p>
+                <pre><code># Define uma função que retorna a soma de dois números
+def somar(a, b):
+    return a + b
+
+resultado = somar(10, 5)
+print(f"O resultado da soma é: {resultado}")</code></pre>
+                <div class="output">
+                    <p class="font-mono text-sm text-green-400">> O resultado da soma é: 15</p>
+                </div>
+            </div>
+
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>try / except</code></h3>
+                <p class="mb-4">Esta estrutura permite "tentar" (<code>try</code>) executar um bloco de código que pode gerar um erro. Se um erro ocorrer, o bloco <code>except</code> (exceto) é executado, evitando que o programa pare abruptamente.</p>
+                <pre><code>try:
+    resultado = 10 / 0
+except ZeroDivisionError:
+    print("Operação falhou: Você não pode dividir por zero.")</code></pre>
+                <div class="output">
+                    <p class="font-mono text-sm text-green-400">> Operação falhou: Você não pode dividir por zero.</p>
+                </div>
+            </div>
+
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>finally</code></h3>
+                <p class="mb-4">O bloco <code>finally</code> (finalmente) é opcional em uma estrutura <code>try/except</code>. O código dentro dele será executado sempre, independentemente de ter ocorrido um erro ou não. É útil para liberar recursos, como fechar um arquivo.</p>
+                <pre><code>try:
+    print("Tentando executar o código.")
+except:
+    print("Um erro ocorreu.")
+finally:
+    print("Este bloco é sempre executado.")</code></pre>
+                <div class="output">
+                    <p class="font-mono text-sm text-green-400">> Tentando executar o código.<br>> Este bloco é sempre executado.</p>
+                </div>
+            </div>
+
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>input()</code></h3>
+                <p class="mb-4">A função <code>input()</code> pausa o programa e solicita que o usuário digite algo no teclado. Ela sempre retorna o que foi digitado como uma string.</p>
+                <pre><code>idade_str = input("Qual a sua idade? ")
+idade_num = int(idade_str) # Converte a string para número
+print(f"Daqui a 10 anos, você terá {idade_num + 10} anos.")</code></pre>
+                <div class="output">
+                    <p class="font-mono text-sm text-green-400">> Qual a sua idade? [Usuário digita 25]<br>> Daqui a 10 anos, você terá 35 anos.</p>
+                </div>
+            </div>
+
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>import</code></h3>
+                <p class="mb-4">A instrução <code>import</code> (importar) é usada para carregar módulos (outros arquivos Python ou bibliotecas) em seu script, permitindo que você use as funções e variáveis definidas neles.</p>
+                <pre><code>import math
+
+# Usando a constante PI e a função de raiz quadrada do módulo math
+print(f"Valor de PI: {math.pi}")
+print(f"Raiz de 81: {math.sqrt(81)}")</code></pre>
+                <div class="output">
+                    <p class="font-mono text-sm text-green-400">> Valor de PI: 3.141592653589793<br>> Raiz de 81: 9.0</p>
+                </div>
+            </div>
+            
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>in</code></h3>
+                <p class="mb-4">O operador <code>in</code> (em) é um operador de pertencimento. Ele verifica se um valor existe dentro de uma sequência (como uma lista, tupla ou string) e retorna <code>True</code> (verdadeiro) ou <code>False</code> (falso).</p>
+                <pre><code>minha_lista = ["carro", "moto", "barco"]
+tem_carro = "carro" in minha_lista
+tem_aviao = "aviao" in minha_lista
+
+print(f"Tem 'carro' na lista? {tem_carro}")
+print(f"Tem 'aviao' na lista? {tem_aviao}")</code></pre>
+                <div class="output">
+                    <p class="font-mono text-sm text-green-400">> Tem 'carro' na lista? True<br>> Tem 'aviao' na lista? False</p>
+                </div>
+            </div>
+
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>del</code></h3>
+                <p class="mb-4">A palavra-chave <code>del</code> (deletar) é usada para remover itens de uma lista por seu índice, ou para apagar completamente variáveis da memória.</p>
+                <pre><code>numeros = [10, 20, 30, 40]
+del numeros[1]  # Remove o item no índice 1 (o valor 20)
+print(f"Lista após o 'del': {numeros}")</code></pre>
+                <div class="output">
+                    <p class="font-mono text-sm text-green-400">> Lista após o 'del': [10, 30, 40]</p>
+                </div>
+            </div>
+
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>count()</code></h3>
+                <p class="mb-4">O método de lista <code>count()</code> (contar) retorna o número de vezes que um elemento especificado aparece na lista.</p>
+                <pre><code>notas = [10, 8, 9, 7, 8, 10, 8]
+ocorrencias_da_nota_8 = notas.count(8)
+print(f"A nota 8 apareceu {ocorrencias_da_nota_8} vezes.")</code></pre>
+                <div class="output">
+                    <p class="font-mono text-sm text-green-400">> A nota 8 apareceu 3 vezes.</p>
+                </div>
+            </div>
+
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>sorted()</code></h3>
+                <p class="mb-4">A função <code>sorted()</code> (ordenado) retorna uma **nova** lista contendo todos os itens do iterável fornecido em ordem crescente. Ela não modifica a lista original.</p>
+                <pre><code>numeros_desordenados = [3, 1, 4, 1, 5, 9]
+numeros_ordenados = sorted(numeros_desordenados)
+
+print(f"Original: {numeros_desordenados}")
+print(f"Ordenada: {numeros_ordenados}")</code></pre>
+                <div class="output">
+                    <p class="font-mono text-sm text-green-400">> Original: [3, 1, 4, 1, 5, 9]<br>> Ordenada: [1, 1, 3, 4, 5, 9]</p>
+                </div>
+            </div>
+            
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-amber-400">Compreensão de Listas</h3>
+                <p class="mb-4">Não é um comando, mas uma sintaxe especial e muito poderosa para criar uma nova lista de forma concisa e legível a partir de uma sequência existente.</p>
+                <pre><code># Cria uma nova lista com o dobro de cada número da original
+numeros = [1, 2, 3, 4, 5]
+dobros = [num * 2 for num in numeros]
+print(dobros)</code></pre>
+                <div class="output">
+                    <p class="font-mono text-sm text-green-400">> [2, 4, 6, 8, 10]</p>
+                </div>
+            </div>
+
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>class</code></h3>
+                <p class="mb-4">A palavra-chave <code>class</code> é usada para criar uma classe, que é um "molde" ou "planta" para criar objetos. Classes são o pilar da Programação Orientada a Objetos.</p>
+                <pre><code>class Carro:
+    # O método __init__ é o construtor da classe
+    def __init__(self, marca):
+        self.marca = marca
+
+# Criando um objeto (instância) da classe Carro
+meu_carro = Carro("Ford")
+print(f"A marca do meu carro é {meu_carro.marca}.")</code></pre>
+                <div class="output">
+                    <p class="font-mono text-sm text-green-400">> A marca do meu carro é Ford.</p>
+                </div>
+            </div>
+
+            <div class="command-card">
+                <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>with</code></h3>
+                <p class="mb-4">A instrução <code>with</code> é usada para simplificar o gerenciamento de recursos, como arquivos. Ela garante que certas operações (como fechar um arquivo) sejam realizadas automaticamente, mesmo que ocorram erros.</p>
+                <pre><code># Escreve em um arquivo de forma segura
+with open("meu_arquivo.txt", "w") as arquivo:
+    arquivo.write("Olá, gerenciador de contexto!")
+# O arquivo é fechado automaticamente aqui</code></pre>
+                <div class="output">
+                    <p class="font-mono text-sm text-green-400">> (Um arquivo chamado 'meu_arquivo.txt' é criado com o texto)</p>
+                </div>
+            </div>
+
+        </section>
+
+        <div class="command-card">
+            <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>pass</code></h3>
+            <p class="mb-4">A instrução <code>pass</code> é um placeholder, ou seja, um marcador de posição. Ela não faz nada. É útil em locais onde a sintaxe do Python exige um comando, mas você ainda não escreveu o código lógico, como dentro de uma função vazia ou de uma classe.</p>
+            <pre><code>def funcao_em_desenvolvimento():
+    pass # Evita um erro de sintaxe em uma função vazia
+
+# O código pode ser executado sem erros
+funcao_em_desenvolvimento()
+print("O programa continua.")</code></pre>
+            <div class="output">
+                <p class="font-mono text-sm text-green-400">> O programa continua.</p>
+            </div>
+        </div>
+
+        <div class="command-card">
+            <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>lambda</code></h3>
+            <p class="mb-4">A palavra-chave <code>lambda</code> permite criar pequenas funções anônimas (sem nome) em uma única linha. Elas são úteis quando você precisa de uma função simples por um curto período, como argumento para outras funções (ex: <code>sorted</code>, <code>map</code>).</p>
+            <pre><code># Cria uma função anônima que adiciona 10 a um número
+adicionar_dez = lambda x: x + 10
+
+resultado = adicionar_dez(5)
+print(f"O resultado é: {resultado}")</code></pre>
+            <div class="output">
+                <p class="font-mono text-sm text-green-400">> O resultado é: 15</p>
+            </div>
+        </div>
+
+        <div class="command-card">
+            <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>from ... import</code></h3>
+            <p class="mb-4">Esta é uma variação da instrução <code>import</code>. Em vez de importar o módulo inteiro, <code>from</code> permite importar uma ou mais partes específicas (funções, classes, variáveis) de um módulo. Isso permite usá-las diretamente, sem o nome do módulo como prefixo.</p>
+            <pre><code># Importa apenas a função 'sqrt' do módulo 'math'
+from math import sqrt
+
+# Agora podemos usar sqrt() diretamente
+raiz_de_25 = sqrt(25)
+print(f"A raiz quadrada de 25 é: {raiz_de_25}")</code></pre>
+            <div class="output">
+                <p class="font-mono text-sm text-green-400">> A raiz quadrada de 25 é: 5.0</p>
+            </div>
+        </div>
+
+        <div class="command-card">
+            <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>global</code></h3>
+            <p class="mb-4">Por padrão, uma função não pode modificar uma variável que está fora dela (no escopo global). A palavra-chave <code>global</code> declara que, dentro de uma função, você pretende modificar uma variável que foi criada no escopo principal do programa.</p>
+            <pre><code>contador = 0 # Variável global
+
+def incrementar():
+    global contador
+    contador += 1
+    print(f"Dentro da função: {contador}")
+
+incrementar()
+print(f"Fora da função: {contador}")</code></pre>
+            <div class="output">
+                <p class="font-mono text-sm text-green-400">> Dentro da função: 1<br>> Fora da função: 1</p>
+            </div>
+        </div>
+
+        <div class="command-card">
+            <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>nonlocal</code></h3>
+            <p class="mb-4">Similar a <code>global</code>, mas usada em funções aninhadas (uma função dentro de outra). A palavra-chave <code>nonlocal</code> permite que a função interna modifique uma variável da função externa (mas que não é global).</p>
+            <pre><code>def funcao_externa():
+    x = 10 # Variável "nonlocal"
+    def funcao_interna():
+        nonlocal x
+        x = 20
+    funcao_interna()
+    print(f"Valor de x na função externa: {x}")
+
+funcao_externa()</code></pre>
+            <div class="output">
+                <p class="font-mono text-sm text-green-400">> Valor de x na função externa: 20</p>
+            </div>
+        </div>
+
+        <div class="command-card">
+            <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>raise</code></h3>
+            <p class="mb-4">A instrução <code>raise</code> (lançar) é usada para forçar a ocorrência de um erro (exceção) de forma deliberada. É útil para sinalizar que uma condição inválida ocorreu, com base na lógica do seu programa.</p>
+            <pre><code>def definir_senha(senha):
+    if len(senha) < 8:
+        raise ValueError("A senha deve ter pelo menos 8 caracteres")
+    print("Senha definida com sucesso!")
+
+try:
+    definir_senha("123")
+except ValueError as e:
+    print(f"Erro: {e}")</code></pre>
+            <div class="output">
+                <p class="font-mono text-sm text-green-400">> Erro: A senha deve ter pelo menos 8 caracteres</p>
+            </div>
+        </div>
+
+
+       <div class="command-card">
+            <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>type()</code></h3>
+            <p class="mb-4">A função <code>type()</code> (tipo) retorna o tipo de um objeto. É extremamente útil para depuração e para entender com que tipo de dado você está trabalhando (string, inteiro, lista, etc.).</p>
+            <pre><code>print(f"O tipo de 100 é: {type(100)}")
+print(f"O tipo de 'Python' é: {type('Python')}")
+print(f"O tipo de [1, 2, 3] é: {type([1, 2, 3])}")</code></pre>
+            <div class="output">
+                <p class="font-mono text-sm text-green-400">> O tipo de 100 é: &lt;class 'int'&gt;<br>> O tipo de 'Python' é: &lt;class 'str'&gt;<br>> O tipo de [1, 2, 3] é: &lt;class 'list'&gt;</p>
+            </div>
+        </div>
+
+        <div class="command-card">
+            <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>int()</code>, <code>str()</code>, <code>float()</code></h3>
+            <p class="mb-4">Este conjunto de funções é usado para converter valores de um tipo para outro. <code>int()</code> para inteiro, <code>str()</code> para string (texto) e <code>float()</code> para número de ponto flutuante (com casas decimais).</p>
+            <pre><code>valor_str = "123"
+valor_int = int(valor_str) # Converte string para inteiro
+
+valor_float = float(valor_int) # Converte inteiro para float
+
+print(f"Inteiro: {valor_int}")
+print(f"Float: {valor_float}")
+print(f"String: 'O número é ' + str(valor_float))")</code></pre>
+            <div class="output">
+                <p class="font-mono text-sm text-green-400">> Inteiro: 123<br>> Float: 123.0<br>> String: 'O número é 123.0'</p>
+            </div>
+        </div>
+
+        <div class="command-card">
+            <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>max()</code>, <code>min()</code>, <code>sum()</code></h3>
+            <p class="mb-4">Estas funções operam sobre uma coleção de números. <code>max()</code> retorna o maior valor, <code>min()</code> o menor, e <code>sum()</code> a soma de todos eles.</p>
+            <pre><code>numeros = [10, 4, 25, 8, 13]
+
+maior = max(numeros)
+menor = min(numeros)
+soma = sum(numeros)
+
+print(f"Maior: {maior}, Menor: {menor}, Soma: {soma}")</code></pre>
+            <div class="output">
+                <p class="font-mono text-sm text-green-400">> Maior: 25, Menor: 4, Soma: 60</p>
+            </div>
+        </div>
+        
+        <div class="command-card">
+            <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>enumerate()</code></h3>
+            <p class="mb-4">A função <code>enumerate()</code> (enumerar) é usada em laços `for` para obter tanto o índice (posição) quanto o valor do item em cada iteração. Ela transforma uma lista como `['a', 'b']` em algo como `(0, 'a'), (1, 'b')`.</p>
+            <pre><code>frutas = ["Maçã", "Banana", "Cereja"]
+for indice, fruta in enumerate(frutas):
+    print(f"Índice {indice}: {fruta}")</code></pre>
+            <div class="output">
+                <p class="font-mono text-sm text-green-400">> Índice 0: Maçã<br>> Índice 1: Banana<br>> Índice 2: Cereja</p>
+            </div>
+        </div>
+
+        <div class="command-card">
+            <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>zip()</code></h3>
+            <p class="mb-4">A função <code>zip()</code> (zíper) agrupa os elementos de duas ou more listas em tuplas (pares, trios, etc.). Ela para assim que a menor lista acaba. É perfeita para iterar sobre múltiplas listas ao mesmo tempo.</p>
+            <pre><code>nomes = ["Ana", "Bruno", "Carlos"]
+idades = [28, 35, 42]
+
+for nome, idade in zip(nomes, idades):
+    print(f"{nome} tem {idade} anos.")</code></pre>
+            <div class="output">
+                <p class="font-mono text-sm text-green-400">> Ana tem 28 anos.<br>> Bruno tem 35 anos.<br>> Carlos tem 42 anos.</p>
+            </div>
+        </div>
+
+        <div class="command-card">
+            <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>map()</code></h3>
+            <p class="mb-4">A função <code>map()</code> (mapear) aplica uma função a cada item de um iterável (como uma lista) e retorna um novo iterável com os resultados. É uma alternativa concisa a um laço `for` para transformações de dados.</p>
+            <pre><code>numeros = [1, 2, 3, 4]
+# Usa map com uma função lambda para elevar cada número ao quadrado
+quadrados = map(lambda x: x**2, numeros)
+
+print(list(quadrados)) # Convertemos para lista para poder visualizar</code></pre>
+            <div class="output">
+                <p class="font-mono text-sm text-green-400">> [1, 4, 9, 16]</p>
+            </div>
+        </div>
+
+        <div class="command-card">
+            <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>filter()</code></h3>
+            <p class="mb-4">A função <code>filter()</code> (filtrar) cria um novo iterável a partir dos elementos de um iterável original para os quais uma função retorna `True`. Essencialmente, ela filtra uma coleção com base em uma condição.</p>
+            <pre><code>numeros = [1, 2, 3, 4, 5, 6]
+# Usa filter com uma função lambda para manter apenas os números pares
+pares = filter(lambda x: x % 2 == 0, numeros)
+
+print(list(pares)) # Convertemos para lista para poder visualizar</code></pre>
+            <div class="output">
+                <p class="font-mono text-sm text-green-400">> [2, 4, 6]</p>
+            </div>
+        </div>
+
+        <div class="command-card">
+            <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>abs()</code></h3>
+            <p class="mb-4">A função <code>abs()</code> retorna o valor absoluto de um número, ou seja, sua magnitude sem sinal. Se o número for negativo, ele se torna positivo.</p>
+            <pre><code>print(f"O valor absoluto de -15 é {abs(-15)}")
+print(f"O valor absoluto de 15 é {abs(15)}")</code></pre>
+            <div class="output">
+                <p class="font-mono text-sm text-green-400">> O valor absoluto de -15 é 15<br>> O valor absoluto de 15 é 15</p>
+            </div>
+        </div>
+        <div class="command-card">
+            <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>and</code>, <code>or</code>, <code>not</code></h3>
+            <p class="mb-4">São os operadores lógicos, usados para criar condições complexas. <code>and</code> (e) requer que ambas as condições sejam verdadeiras. <code>or</code> (ou) requer que pelo menos uma seja verdadeira. <code>not</code> (não) inverte o resultado de uma condição (de verdadeiro para falso e vice-versa).</p>
+            <pre><code>idade = 25
+possui_cnh = True
+
+if idade >= 18 and possui_cnh:
+    print("Pode dirigir.")
+
+if idade < 18 or not possui_cnh:
+    print("Não pode dirigir.")
+else:
+    print("Condições para não dirigir são falsas.")</code></pre>
+            <div class="output">
+                <p class="font-mono text-sm text-green-400">> Pode dirigir.<br>> Condições para não dirigir são falsas.</p>
+            </div>
+        </div>
+
+        <div class="command-card">
+            <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>is</code></h3>
+            <p class="mb-4">O operador <code>is</code> (é) é um operador de identidade. Ele não verifica se os valores são iguais (como o <code>==</code> faz), mas sim se duas variáveis apontam para o **exatamente mesmo objeto** na memória. É uma verificação mais estrita.</p>
+            <pre><code>lista_a = [1, 2, 3]
+lista_b = [1, 2, 3] # Outro objeto, com o mesmo conteúdo
+lista_c = lista_a   # Mesmo objeto de lista_a
+
+print(f"a == b: {lista_a == lista_b}") # Compara VALORES
+print(f"a is b: {lista_a is lista_b}")   # Compara IDENTIDADE
+print(f"a is c: {lista_a is lista_c}")   # Compara IDENTIDADE</code></pre>
+            <div class="output">
+                <p class="font-mono text-sm text-green-400">> a == b: True<br>> a is b: False<br>> a is c: True</p>
+            </div>
+        </div>
+
+        <div class="command-card">
+            <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>dict()</code></h3>
+            <p class="mb-4">Cria um dicionário (<code>dict</code>), que é uma coleção de pares chave-valor. Em vez de acessar itens por um índice numérico, você os acessa pela chave. É uma das estruturas de dados mais importantes e versáteis do Python.</p>
+            <pre><code># Criando um dicionário de informações de um usuário
+usuario = {
+    "nome": "Carlos",
+    "idade": 42,
+    "cidade": "São Paulo"
+}
+
+# Acessando um valor pela sua chave
+print(f"O usuário {usuario['nome']} mora em {usuario['cidade']}.")</code></pre>
+            <div class="output">
+                <p class="font-mono text-sm text-green-400">> O usuário Carlos mora em São Paulo.</p>
+            </div>
+        </div>
+
+        <div class="command-card">
+            <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>tuple()</code></h3>
+            <p class="mb-4">Cria uma tupla (<code>tuple</code>). Uma tupla é muito parecida com uma lista, mas com uma diferença crucial: ela é **imutável**, ou seja, uma vez criada, não pode ser alterada. É ideal para dados que não devem mudar, como coordenadas ou constantes.</p>
+            <pre><code># Criando uma tupla com coordenadas
+coordenadas = (10.0, 20.5)
+
+print(f"Coordenada X: {coordenadas[0]}")
+
+# A linha abaixo causaria um erro, pois tuplas são imutáveis:
+# coordenadas[0] = 15.0</code></pre>
+            <div class="output">
+                <p class="font-mono text-sm text-green-400">> Coordenada X: 10.0</p>
+            </div>
+        </div>
+
+        <div class="command-card">
+            <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>set()</code></h3>
+            <p class="mb-4">Cria um conjunto (<code>set</code>), que é uma coleção de itens **únicos** e desordenados. Sets são ótimos para remover duplicatas de uma lista e para realizar operações matemáticas de conjuntos, como união, interseção e diferença.</p>
+            <pre><code>numeros_com_duplicatas = [1, 2, 2, 3, 4, 4, 4, 5]
+numeros_unicos = set(numeros_com_duplicatas)
+
+print(f"Conjunto de itens únicos: {numeros_unicos}")</code></pre>
+            <div class="output">
+                <p class="font-mono text-sm text-green-400">> Conjunto de itens únicos: {1, 2, 3, 4, 5}</p>
+            </div>
+        </div>
+
+        <div class="command-card">
+            <h3 class="text-2xl font-semibold mb-3 text-amber-400"><code>super()</code></h3>
+            <p class="mb-4">Em Programação Orientada a Objetos, <code>super()</code> é usada em uma classe filha para chamar métodos da classe pai da qual ela herda. É mais comumente usada no construtor (<code>__init__</code>) para garantir que a inicialização da classe pai seja executada.</p>
+            <pre><code>class Animal:
+    def __init__(self, nome):
+        self.nome = nome
+
+class Cachorro(Animal):
+    def __init__(self, nome, raca):
+        super().__init__(nome) # Chama o __init__ da classe pai (Animal)
+        self.raca = raca
+
+meu_cachorro = Cachorro("Rex", "Labrador")
+print(f"Nome: {meu_cachorro.nome}, Raça: {meu_cachorro.raca}")</code></pre>
+            <div class="output">
+                <p class="font-mono text-sm text-green-400">> Nome: Rex, Raça: Labrador</p>
+            </div>
+        </div>
+        <footer class="text-center mt-12 pt-8 border-t border-gray-700">
+            <p class="text-gray-500">Guia criado para consulta rápida. Experimente os códigos para aprender!</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
